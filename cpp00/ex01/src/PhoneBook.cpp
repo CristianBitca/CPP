@@ -12,6 +12,16 @@
 
 #include "PhoneBook.hpp"
 
+void	PhoneBook::searchContact()
+{
+
+}
+
+void	PhoneBook::addContact(std::string firstName,)
+{
+	
+}
+
 commands PhoneBook::parsecommands()
 {
 	std::string	input;

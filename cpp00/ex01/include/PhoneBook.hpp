@@ -29,9 +29,13 @@ class PhoneBook
 {
 private:
 	Contact	contact[8];
+	int		count;
+	int		old;
 public:
 	PhoneBook();
 	commands	parsecommands();
+	void		addContact();
+	void		searchContact();
 };
 
 #endif
