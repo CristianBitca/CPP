@@ -16,6 +16,8 @@
 #include <iostream>
 #include "Contact.hpp"
 
+#define MAX_CONTACTS 8
+
 typedef	enum e_commands
 {
 	UNKNOWN,
@@ -29,13 +31,12 @@ class PhoneBook
 {
 private:
 	Contact	contact[8];
-	int		count;
-	int		old;
+	int		i;
 public:
 	PhoneBook();
 	commands	parsecommands();
 	void		addContact();
-	void		searchContact();
+	void		searchContact() const;
 };
 
 #endif

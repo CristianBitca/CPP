@@ -25,6 +25,7 @@ private:
 	std::string secret;
 public:
 	Contact();
+	void	addData();
+	void	printData()	const;
 };
-
 #endif

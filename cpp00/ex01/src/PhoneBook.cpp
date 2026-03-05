@@ -12,14 +12,17 @@
 
 #include "PhoneBook.hpp"
 
-void	PhoneBook::searchContact()
+void	PhoneBook::searchContact() const
 {
 
 }
 
-void	PhoneBook::addContact(std::string firstName,)
+void	PhoneBook::addContact()
 {
-	
+	if (i == MAX_CONTACTS)
+		i = 0;
+	contact[i].addData();
+	i++;
 }
 
 commands PhoneBook::parsecommands()
@@ -38,15 +41,17 @@ commands PhoneBook::parsecommands()
 
 PhoneBook::PhoneBook()
 {
+	i = 0;
+
 	while (1)
 	{
 		switch (parsecommands())
 		{
 			case ADD:
-				std::cout << "ADD" << std::endl;
+				addContact();
 				break;
 			case SEARCH:	
-				std::cout << "SEARCH" << std::endl;
+				searchContact();
 				break;
 			case EXIT:
 				return;
