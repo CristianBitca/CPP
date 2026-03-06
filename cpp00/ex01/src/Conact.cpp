@@ -15,20 +15,42 @@
 
 void    Contact::printData()    const
 {
-    std::cout << firstName << std::endl;
-    std::cout << lastName << std::endl;
-    std::cout << Nickname << std::endl;
-    std::cout << phone << std::endl;
+    std::cout << firstName;
+    std::cout << lastName;
+    std::cout << Nickname;
+    std::cout << phone;
     std::cout << secret << std::endl;
+}
+
+int	Contact::parseData(std::string	*data)
+{
+	int	count = 0;
+	int maxAttempt = 3;
+
+	while (count != maxAttempt)
+	{
+		std::getline(std::cin, *data);
+		if (data->empty()) {
+			std::cout << "Empty line" << std::endl;
+			count++;
+		} else
+			return (0);
+	}
+	return (1);
 }
 
 void    Contact::addData()
 {
-    std::getline(std::cin, firstName);
-    std::getline(std::cin, lastName);
-    std::getline(std::cin, Nickname);
-    std::getline(std::cin, phone);
-    std::getline(std::cin, secret);
+	if (parseData(&firstName))
+		return ;
+    if (parseData(&lastName))
+		return ;
+	if (parseData(&Nickname))
+		return ;
+	if (parseData(&phone))
+		return ;
+	if (parseData(&secret))
+		return ;
 }
 
 Contact::Contact ()

@@ -25,6 +25,7 @@ private:
 	std::string secret;
 public:
 	Contact();
+	int		parseData(std::string *data);
 	void	addData();
 	void	printData()	const;
 };
