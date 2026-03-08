@@ -6,7 +6,7 @@
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 17:12:13 by cbitca            #+#    #+#             */
-/*   Updated: 2026/03/03 17:12:14 by cbitca           ###   ########.fr       */
+/*   Updated: 2026/03/08 21:53:16 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,12 @@ private:
 	Contact	contact[8];
 	int		i;
 public:
-	PhoneBook();
+	void		createPhoneBook();
 	commands	parsecommands();
 	void		addContact();
 	void		searchContact() const;
+	void		printContacts() const;
+	void		printHeader() const;
 };
 
 #endif

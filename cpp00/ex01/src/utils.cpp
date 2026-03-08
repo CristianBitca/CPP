@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/03 17:11:48 by cbitca            #+#    #+#             */
-/*   Updated: 2026/03/03 17:11:49 by cbitca           ###   ########.fr       */
+/*   Created: 2026/03/08 17:30:19 by cbitca            #+#    #+#             */
+/*   Updated: 2026/03/08 21:55:46 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include "utils.hpp"
+#include <string>
 
-int	main()
+int     checkPhone(std::string const input)
 {
-	PhoneBook	myPhoneBook;
+    int i = 0;
+    do {
+        if (input[0] == '+')
+            i++;
+        if (isdigit(input[i]))
+            i++;
+        else
+            return EXIT_FAILURE;
+    }   while (input[i]);
+    return EXIT_SUCCESS;
+}
 
-	myPhoneBook.createPhoneBook();
-	return (0);
+void    parseInput(std::string *input)
+{
+    if (!std::getline(std::cin, *input)) {
+		std::cout << std::endl;
+		exit(1);	
+	}
 }

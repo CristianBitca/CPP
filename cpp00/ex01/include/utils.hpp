@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/03 17:11:48 by cbitca            #+#    #+#             */
-/*   Updated: 2026/03/03 17:11:49 by cbitca           ###   ########.fr       */
+/*   Created: 2026/03/08 17:33:20 by cbitca            #+#    #+#             */
+/*   Updated: 2026/03/08 21:57:07 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#ifndef UTILS_HPP
+#define UTILS_HPP
 
-int	main()
-{
-	PhoneBook	myPhoneBook;
+#include <cstdlib>
+#include <iomanip>
 
-	myPhoneBook.createPhoneBook();
-	return (0);
-}
+void    parseInput(std::string *input);
+int     checkPhone(std::string const input);
+
+#endif
