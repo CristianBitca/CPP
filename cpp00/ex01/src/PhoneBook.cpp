@@ -6,12 +6,20 @@
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 17:11:58 by cbitca            #+#    #+#             */
-/*   Updated: 2026/03/08 23:01:41 by cbitca           ###   ########.fr       */
+/*   Updated: 2026/03/18 16:39:14 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "utils.hpp"
+
+PhoneBook::PhoneBook()
+{
+}
+
+PhoneBook::~PhoneBook()
+{
+}
 
 void    PhoneBook::printHeader()	const
 {

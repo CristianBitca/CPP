@@ -6,7 +6,7 @@
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 20:17:41 by cbitca            #+#    #+#             */
-/*   Updated: 2026/03/10 12:52:36 by cbitca           ###   ########.fr       */
+/*   Updated: 2026/03/18 16:49:51 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,15 +75,16 @@ void	Account::displayAccountsInfos()
 
 void	Account::makeDeposit(int deposit)
 {
+	int p_amount = _amount;
 	_amount += deposit;
 	_nbDeposits++;
 	_totalAmount += deposit;
 	_totalNbDeposits++;
 	_displayTimestamp();
 		std::cout << "index:" << _accountIndex
-		<< ";p_amount:" << _amount
+		<< ";p_amount:" << p_amount
 		<< ";deposit:" << deposit
-		<< ";amount:" << _amount + deposit
+		<< ";amount:" << _amount
 		<< ";nb_deposits:" << _nbDeposits
 		<< std::endl;
 }
@@ -97,15 +98,16 @@ bool	Account::makeWithdrawal(int withdrawal)
 			<< ";withdrawal:refused" << std::endl;
 		return false;
 	}
+	int p_amount = _amount;
 	_amount -= withdrawal;
-	_nbDeposits++;
+	_nbWithdrawals++;
 	_totalAmount -= withdrawal;
-	_totalNbDeposits++;
+	_totalNbWithdrawals++;
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex
-		<< ";p_amount:" << _amount
+		<< ";p_amount:" << p_amount
 		<< ";withdrawal:" << withdrawal
-		<< ";amount:" << _amount - withdrawal
+		<< ";amount:" << _amount
 		<< ";nb_withdrawals:" << _nbWithdrawals
 		<< std::endl;
 	return true;

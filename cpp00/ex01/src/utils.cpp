@@ -6,7 +6,7 @@
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 17:30:19 by cbitca            #+#    #+#             */
-/*   Updated: 2026/03/08 21:55:46 by cbitca           ###   ########.fr       */
+/*   Updated: 2026/03/18 16:39:34 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@
 int     checkPhone(std::string const input)
 {
     int i = 0;
+
+	if (input[0] == '+')
+        i++;
     do {
-        if (input[0] == '+')
-            i++;
         if (isdigit(input[i]))
             i++;
         else
