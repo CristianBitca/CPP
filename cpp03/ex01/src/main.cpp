@@ -6,11 +6,12 @@
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 13:42:52 by cbitca            #+#    #+#             */
-/*   Updated: 2026/03/12 14:02:33 by cbitca           ###   ########.fr       */
+/*   Updated: 2026/03/13 12:31:01 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
@@ -46,5 +47,18 @@ int main(void)
     ct.takeDamage(5);
 
     std::cout << "\n=== Destroying ClapTrap ===" << std::endl;
+
+    std::cout << "\n=== ScavTrap tests ===" << std::endl;
+    ScavTrap sc("Scavvy");
+
+    sc.guardGate();
+    sc.attack("Enemy");
+    sc.takeDamage(50);
+    sc.beRepaired(20);
+
+    std::cout << "\n=== Chaining proof (watch constructor/destructor order) ===" << std::endl;
+    {
+        ScavTrap temp("Temp");
+    }
     return 0;
 }

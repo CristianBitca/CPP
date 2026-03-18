@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/11 21:34:16 by cbitca            #+#    #+#             */
-/*   Updated: 2026/03/12 14:02:28 by cbitca           ###   ########.fr       */
+/*   Created: 2026/03/13 13:10:38 by cbitca            #+#    #+#             */
+/*   Updated: 2026/03/13 13:22:20 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef	FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
+#include "ClapTrap.hpp"
 #include <iostream>
 
-class ClapTrap
+class FragTrap : public ClapTrap
 {
-private:
-	std::string	_name;
-	int	_hitPoints;
-	int	_energyPoints;
-	int	_attackDamage;
 public:
-	ClapTrap(const std::string& name);
-	~ClapTrap();
+	FragTrap(const std::string& name);
+	~FragTrap();
 	void	attack(const std::string& target);
-	void	takeDamage(unsigned	int	amount);
-	void	beRepaired(unsigned int	amount);
+    void    highFivesGuys();
 };
 
 #endif

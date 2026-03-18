@@ -6,7 +6,7 @@
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 21:34:16 by cbitca            #+#    #+#             */
-/*   Updated: 2026/03/12 14:02:28 by cbitca           ###   ########.fr       */
+/*   Updated: 2026/03/13 12:27:21 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-private:
+protected:
 	std::string	_name;
 	int	_hitPoints;
 	int	_energyPoints;
