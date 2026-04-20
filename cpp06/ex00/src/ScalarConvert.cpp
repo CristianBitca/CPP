@@ -6,7 +6,7 @@
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 15:06:21 by cbitca            #+#    #+#             */
-/*   Updated: 2026/04/06 18:56:29 by cbitca           ###   ########.fr       */
+/*   Updated: 2026/04/20 18:36:06 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ int    ScalarConvert::toInt(char value)
  
 char    ScalarConvert::toChar(const std::string& value)
 {
-    if (isprint(value[1])
+    if (isprint(value[1]))
         return value[1];
     int tmp = toInt(value);
     if (tmp >= std::numeric_limits<char>::min() && tmp <= std::numeric_limits<char>::max()) {
