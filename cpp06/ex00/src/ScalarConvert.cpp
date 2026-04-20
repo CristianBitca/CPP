@@ -6,7 +6,7 @@
 /*   By: cbitca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 15:06:21 by cbitca            #+#    #+#             */
-/*   Updated: 2026/04/01 09:55:51 by cbitca           ###   ########.fr       */
+/*   Updated: 2026/04/06 18:56:29 by cbitca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,12 @@
  
 bool    ScalarConvert::isChar(const std::string& value)
 {
-    // Handle the case: 'a' (Literal format, 3 characters)
     if (value.size() == 3 && value[0] == '\'' && value[2] == '\'') {
         return std::isprint(static_cast<unsigned char>(value[1]));
     }
-
-    // Handle the case: a (Single character format, 1 character)
-    // We check !isdigit to ensure '0' isn't treated as a char '0' 
-    // if your logic prefers treating '0' as an int.
     if (value.size() == 1 && std::isprint(static_cast<unsigned char>(value[0])) && !std::isdigit(value[0])) {
         return true;
     }
-
     return false;
 } 
  
@@ -123,7 +117,7 @@ int    ScalarConvert::toInt(char value)
  
 char    ScalarConvert::toChar(const std::string& value)
 {
-    if (isChar(value))
+    if (isprint(value[1])
         return value[1];
     int tmp = toInt(value);
     if (tmp >= std::numeric_limits<char>::min() && tmp <= std::numeric_limits<char>::max()) {
@@ -143,6 +137,7 @@ float    ScalarConvert::toFloat(const std::string& value)
  
 float   ScalarConvert::toFloat(int value)
 {
+    std::cout << static_cast<float>(value) << std::endl;
     return static_cast<float>(value);
 }
  
